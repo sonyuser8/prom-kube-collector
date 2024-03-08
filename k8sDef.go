@@ -1,5 +1,6 @@
 package main
 
+// Should figure out how community handle this part for pod / deployment / statefulset / daemonset / cronjob
 type KubeApiResp struct {
 	Items []struct {
 		Kind     string `json:"kind"`
