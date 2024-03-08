@@ -10,7 +10,6 @@ import (
 )
 
 func execKubectl() {
-	// TODO: 如何正規化 cpu / memory 之數值並且相加
 	selector := "k8s-app=kube-dns"
 	out, errout, err := Shellout(fmt.Sprintf("kubectl get po -A -l %s -o json", selector))
 
