@@ -1,0 +1,30 @@
+{
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "__name__": "scrape_duration_seconds",
+            "instance": "myapp:5000",
+            "job": "myapp"
+          },
+          "value": [
+            1709904778.076,
+            "3.30544725"
+          ]
+        },
+        {
+            "metric": {
+              "__name__": "scrape_duration_seconds",
+              "instance": "myapp2:5000",
+              "job": "myapp"
+            },
+            "value": [
+              1709904778.076,
+              "4.9"
+            ]
+          }
+      ]
+    }
+}
