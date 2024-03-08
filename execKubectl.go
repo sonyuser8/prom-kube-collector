@@ -9,22 +9,21 @@ import (
 	"k8s.io/klog"
 )
 
-func execCmd() {
-	// Sample code for kubectl
-	// TODO: output json and parse by golang struct
-	// TODO: regex to parse product and release unit in image path
+func execKubectl() {
+	// TODO: 如何正規化 cpu / memory 之數值並且相加
 	selector := "k8s-app=kube-dns"
 	out, errout, err := Shellout(fmt.Sprintf("kubectl get po -A -l %s -o json", selector))
 
 	if err != nil {
 		klog.Infof("error: %v\n", err)
 	}
-	fmt.Println(out)
+	// fmt.Println(out)
 	klog.Info(errout)
 
 	var ret KubeApiResp
 	json.Unmarshal([]byte(out), &ret)
-	klog.Infof("%+v", ret)
+	// klog.Infof("%+v", ret)
+	klog.Infof("%s", ret.Items[0].Spec.Containers[0].Image)
 
 }
 
