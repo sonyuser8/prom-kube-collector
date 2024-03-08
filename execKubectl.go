@@ -9,10 +9,6 @@ import (
 	"k8s.io/klog"
 )
 
-type KubeApiResp struct {
-	ApiVersion string `json:"apiVersion"`
-}
-
 func execCmd() {
 	// Sample code for kubectl
 	// TODO: output json and parse by golang struct
