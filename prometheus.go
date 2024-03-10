@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 
@@ -31,10 +30,13 @@ func callPrometheus() {
 	klog.Info("getUrl pass")
 	var ret PromResp
 	json.Unmarshal(dat, &ret)
-	for _, value := range ret.Data.Result {
-		fmt.Println(value.Metric["instance"]) // hardcode instance for now
+	for _, data := range ret.Data.Result {
+		klog.Infof(`data.Metric=%v,data.Value[0]=%s`,
+			data.Metric, data.Value[1])
+		// fmt.Println(data.Metric["instance"]) // hardcode instance for now
+		// data.Value[0]
+		// data.Value[1]
 	}
-
 }
 
 func getUrl(url string) []byte {

@@ -4,7 +4,8 @@ import (
 	"fmt"
 )
 
-const url = "http://localhost:9090/api/v1/query?query=scrape_duration_seconds"
+// const url = "http://localhost:9090/api/v1/query?query=scrape_duration_seconds"
+const url = "http://demo.robustperception.io:9090/api/v1/query?query=up"
 const ShellToUse = "bash"
 
 func main() {
